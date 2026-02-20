@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded',()=> {
     const subtitulo = document.querySelector('.subtitulo')
     const bio = document.querySelector('#bio')
     const imagem = document.querySelector('.imagem')
-    // A partir daqui
+    
     const blog = document.querySelector('.blog')
     const seguidores = document.querySelector('.seguidores')
     const seguindo = document.querySelector('.seguindo')
     const local = document.querySelector('.local')
     const publicRepos = document.querySelector('.publicRepos')
     const criadoEm = document.querySelector('.criadoEm')
-    // Até aqui
+    const repos = document.querySelector('.repos')
 
     async function fecthData() {
         const responseUser = await fetch('https://api.github.com/users/MarcioAlex-x')
@@ -35,6 +35,29 @@ document.addEventListener('DOMContentLoaded',()=> {
         // Dados dos repositórios
         const fetchRepos = await fetch('https://api.github.com/users/MarcioAlex-x/repos')
         const dataRepos = await fetchRepos.json()
+
+        dataRepos.forEach(repo => {
+            const reposContainer = document.createElement('div')
+            const titleRepo = document.createElement('h2')
+            const descriptionRepo = document.createElement('p')
+            const languageRepo = document.createElement('p')
+            const anchorageRepo = document.createElement('a')
+            
+            titleRepo.innerHTML = repo.name
+            descriptionRepo.innerHTML = repo.description
+            languageRepo.innerHTML = repo.language
+            anchorageRepo.href=repo.html_url
+            anchorageRepo.target = '_blank'
+            anchorageRepo.innerHTML='Acessar Repositório'
+            
+            reposContainer.appendChild(titleRepo)
+            reposContainer.appendChild(descriptionRepo)
+            reposContainer.appendChild(languageRepo)
+            reposContainer.appendChild(anchorageRepo)
+
+            repos.appendChild(reposContainer)
+        });
+
         
     }
 

@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             reposContainer.appendChild(anchorageRepo)
 
             repos.appendChild(reposContainer)
+            // Até aqui
         });
 
         

@@ -1,0 +1,47 @@
+/* mútiplos de 8 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.imagem{
+    width: 160px; 
+    margin: 40px auto 8px;
+    display: block;
+    border: 1px solid #00000079;
+    padding: 4px;
+    /* border-radius: 4px; */
+}
+
+.titulo, .subtitulo{
+    text-align: center;
+}
+
+.subtitulo{
+    color: #888;
+    margin-bottom: 32px;
+}
+
+
+.seguidoresContainer{
+    width: 320px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+h2{
+    text-align: center;
+}
+
+article{
+    display: flex;
+    width: 960px;
+}

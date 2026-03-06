@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded',()=> {
         subtitulo.innerHTML = dataUser.login
         bio.innerHTML = dataUser.bio
         if(blog !== "")blog.innerHTML = `Blog: ${dataUser.blog}`
-        seguidores.innerHTML = `Seguidores: ${dataUser.followers}`
-        seguindo.innerHTML = `Seguindo: ${dataUser.following}`
+        seguidores.innerHTML = `<b>Seguidores:</b> ${dataUser.followers}`
+        seguindo.innerHTML = `<b>Seguindo:</b> ${dataUser.following}`
         if(dataUser.location !== null) local.innerHTML = `Cidade: ${dataUser.location}`
         publicRepos.innerHTML = `Repositórios públicos: ${dataUser.public_repos}`
         criadoEm.innerHTML = `Criado em: ${new Date(dataUser.created_at).toLocaleDateString('pt-BR',{
@@ -56,10 +56,8 @@ document.addEventListener('DOMContentLoaded',()=> {
             reposContainer.appendChild(anchorageRepo)
 
             repos.appendChild(reposContainer)
-            // Até aqui
         });
 
-        
     }
 
     fecthData()
